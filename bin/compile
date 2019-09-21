@@ -13,12 +13,12 @@ if [ ! -f "${ENV_DIR}/APP_BASE" ]; then
     exit 1
 fi
 APP_BASE="$(cat "${ENV_DIR}/APP_BASE")"
-SHARED="${STAGE}/$(basename ${APP_BASE})"
+SHARED="${STAGE}/$(basename ${APP_BASE})/shared"
 
 (
     mv "${BUILD_DIR}/${APP_BASE}" "${STAGE}" &&
     mkdir -p "${SHARED}" &&
-    mv "${BUILD_DIR}/shared" "${SHARED}/" &&
+    mv "${BUILD_DIR}/shared" "${SHARED}" &&
     rm -rf "${BUILD_DIR}" &&
     mv "${STAGE}/$(basename "$APP_BASE")" "${BUILD_DIR}"
 )
