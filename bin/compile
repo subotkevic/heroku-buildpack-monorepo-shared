@@ -13,7 +13,7 @@ if [ ! -f "${ENV_DIR}/APP_BASE" ]; then
     exit 1
 fi
 APP_BASE="$(cat "${ENV_DIR}/APP_BASE")"
-SHARED="${STAGE}/$(basename ${APP_BASE})/shared"
+SHARED="${STAGE}/$(basename ${APP_BASE})"
 
 (
     mv "${BUILD_DIR}/${APP_BASE}" "${STAGE}" &&
