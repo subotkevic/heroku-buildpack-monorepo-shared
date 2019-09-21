@@ -17,7 +17,6 @@ SHARED="${STAGE}/$(basename ${APP_BASE})/shared"
 
 (
     mv "${BUILD_DIR}/${APP_BASE}" "${STAGE}" &&
-    mkdir -p "${SHARED}" &&
     mv "${BUILD_DIR}/shared" "${SHARED}" &&
     rm -rf "${BUILD_DIR}" &&
     mv "${STAGE}/$(basename "$APP_BASE")" "${BUILD_DIR}"
